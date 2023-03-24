@@ -61,9 +61,16 @@ CREATE TABLE Order_Item (
     FOREIGN KEY (order_id) REFERENCES Order(order_id)
 );
 
+INSERT INTO Branch (branch_id, branch_name, branch_address)
+VALUES (1, 'Cardiff', '123 Main Street');
 
 INSERT INTO Staff (staff_id, branch_id, staff_type, staff_name, staff_phone_number, staff_welsh_speaking)
 VALUES (1, 1, 'receptionist', 'John Doe', '555-555-1234', TRUE);
+
+INSERT INTO Activity (activity_id, activity_type, activity_duration)
+VALUES (1, 'Eye Test', 60),
+       (2, 'Glasses/Contact Lens Collection and Fitting', 30),
+       (3, 'Glasses/Contact Lens Repair and/or Adjustment', 30);
 
 
 INSERT INTO Appointment (appointment_id, activity_id, staff_id, customer_name, appointment_date, appointment_time)
